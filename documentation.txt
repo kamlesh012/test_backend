@@ -1,0 +1,271 @@
+                                                   
+Date: 05/04/2023
+Time: 01 Hr : 24 Min : 16 Sec
+Title:-> A Minor Bug
+//When making a API request to Fetch all messages in a chat using a chat id
+all the messages are being fetched from old to new. top to bottom.in reverse order
+
+
+Date: 01/04/2023
+Time: 00 Hr : 06 Min : 22 Sec
+Title:-> The loading animation about which I talked below is working after selecting a user.
+
+Time: 00 Hr : 04 Min : 24 Sec
+Title:-> when clicking on a user after searching on the sidebar,the chat is being created(checked on console,network tab) but my UI is showing error,message cannot be found.
+
+Time: 23 Hr : 50 Min : 10 Sec
+Title:-> Loading animation not working. src>components/miscellaneous/sidedrawer 
+ {/* Loading animation when searching a user not working as of now 1 april 10:00PM */}
+            {loadingChat && <Spinner ml="auto" display="flex" />}
+
+Time: 14 Hr : 38 Min : 20 Sec
+
+Title:-> CORS error. maybe due to using socket io. client in frontend>src>singlechat
+& using single chat in chatbox & many places. 
+
+Time: 14 Hr : 49 Min : 50 Sec
+fixed! used display insetead of d.
+Title:-> src>SideDrawer.js
+base:"none" breakpoint of Chakra UI is not working. the search user text must disappera when reducing the screen size. but it;s not.
+ 
+
+Date: 29/03/2023
+Time: 18 Hr : 27 Min : 44 Sec
+
+Title:-> Error 431 Resolved
+Finally Understood the reason for ERROR 431 Request Headers are too long
+Front end(React App) is hosted on Local Host:3000;
+Backend (Node Js Server) is hosted on Local Host:5000;
+The error is with proxy of Front-End React App.
+The Proxy of front end should not be set to the same url as the hosted url of react app.
+I accidentaly set the frontend proxy to 3000 which was creating a loop.
+
+Setting the proxy of frontend to any other url other than frontend hosted url(3000) in package.json
+of  frontend folder helped fix the issue.
+
+Date: 12/02/2023
+Time: 17 Hr : 35 Min : 38 Sec
+
+Title:-> Recap of the basics
+                                                   
+Date: 19/02/2023
+Time: 13 Hr : 00 Min : 24 Sec
+Title:-> Mongo DB Tutorial
+
+Date: 30/07/2022
+
+Time: 00 Hr : 53 Min : 16 Sec
+Title:Colon in a URL in Nodejs
+
+Colon(:) Represents a Parameter that is to be passed in the URL.
+Can be accessed using req.params.(name of parameter)
+                                                                  
+Time: 01 Hr : 07 Min : 28 Sec
+Title:-> Array.find function
+
+The find() method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+Time: 01 Hr : 07 Min : 28 Sec
+Title:-> Dotenv
+Node Module to get access to environment variables from .env file
+
+                                                   
+Date: 30/07/2022 
+
+Time: 22 Hr : 17 Min : 22 Sec
+Title:->Chakra UI using
+Simply Import Like BootStrap. & Use components with various props.
+Time: 22 Hr : 46 Min : 29 Sec
+Title:-> CORS Error if making api call from front end to backend. To avoid add proxy to frontend's package.json with same url as server url.
+Time: 22 Hr : 48 Min : 07 Sec
+Title:->  we Need to have Same origin if we want to access our api from frontend
+
+
+Time: 23 Hr : 02 Min : 44 Sec
+Title:-> React Router
+Routing means to have different Web-Pages with of a Single site from a single root url to different child urls.Just as in Flask.
+
+npx install react-router react-router-dom
+
+import BrowserRouter
+
+wrap your component around BrowserRouter (the level from which you want to start routing)
+
+Multiple routes can be create by Using Route component that takes  props as:
+
+path->path of route
+exact->renders only if path is exact
+render={()=><Component you want to render on this path/>}
+
+Time: 23 Hr : 12 Min : 13 Sec
+Title:-> Link Component from React Router
+Just as <a href="url">link</a> in html
+there is a Link Component in React
+<Link to="url">Click<Link>
+that is used to create hyperlinks. But it doesn't refresh the page. That's how our React APP become Single Page Application using ROuting by not refreshing for differnet pages.
+
+Time: 23 Hr : 13 Min : 16 Sec
+Title:-> Switch from React Router is used if Multiple Routes matches the URL then it
+Renders only the first Route that matches the URL.Maybe Just like switch case.
+
+Time: 23 Hr : 14 Min : 38 Sec
+Title:-> Component prop
+Component prop inside Route Component takes name of COmponent and renders that Component on given path. WOrks same as render.Used Mostly.
+
+Time: 23 Hr : 37 Min : 05 Sec
+Title:-> Example of React Router
+
+    import React from "react";
+    import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+    } from "react-router-dom";
+
+    export default function App() {
+    return (
+        <Router>
+        <div>
+            <nav>
+            <ul>
+                <li>
+                <Link to="/">Home</Link>
+                </li>
+                <li>
+                <Link to="/about">About</Link>
+                </li>
+                <li>
+                <Link to="/users">Users</Link>
+                </li>
+            </ul>
+            </nav>
+
+            {/* A <Switch> looks through its children <Route>s and
+                renders the first one that matches the current URL. */}
+            <Switch>
+            <Route path="/about">
+                <About />
+            </Route>
+            <Route path="/users">
+                <Users />
+            </Route>
+            <Route path="/">
+                <Home />
+            </Route>
+            </Switch>
+        </div>
+        </Router>
+    );
+    }
+
+    function Home() {
+    return <h2>Home</h2>;
+    }
+
+    function About() {
+    return <h2>About</h2>;
+    }
+
+    function Users() {
+    return <h2>Users</h2>;
+    }
+
+                                                   
+Date: 01/08/2022
+Time: 04 Hr : 03 Min : 11 Sec
+Title:-> Axios 
+Promise Based Http Client to call API & get data from it.Alternative of Fetch API of JavaScript.
+
+Time: 04 Hr : 41 Min : 30 Sec
+Title:-> Connecting React & Node on same origin
+Add proxy url of Node's Backend(localhost:5000 suppposed) to package.json of React App.
+
+Time: 04 Hr : 54 Min : 48 Sec
+Title:-> Object Destructuring in JavaScript
+
+You can access the properties of an object in JavaScript in 3 ways:
+
+Dot property accessor:
+    object.property
+
+Square brackets property access:
+    object['property']
+
+Object destructuring: 
+    const { property } = object
+
+                                                   
+Date: 02/08/2022
+Time: 20 Hr : 16 Min : 52 Sec
+Title:-> Mongo DB 
+
+-Mongod (Mongo Daemon is MongoDB Server)
+-Mongosh (Earlier just Mongo is JS based Mongodb Shell to write commands)
+
+-In Mongodb a Document is single/many key value pair(s) that is a JavaScript Object.Document is enclosed inside {} just like Objects in Js.
+
+//Collection is Group of Documents. Just like Tables.
+
+//In below commands 
+    -collection is name of collection not keyword(should be replaced by name of a collection).
+    -db is a keyword.
+
+help:A Command shows necessary commands
+
+use database_name 
+
+show dbs/collections
+
+Create->
+db.collection.insertOne({key:"value",intkey:whateverValue})
+insert{both},insertOne({single object}),insertMany(takes array)
+
+Read->
+db.collection.find()    
+
+db.collection.find({name:"Kamlesh"})
+
+db.collection.find({id:{$gt:1}})
+
+db.collection.find({id:{$lt:2}},{name:1,id:0})
+
+Update->updateOne/updateMany
+
+db.collection.updateOne({id:2},{$set:{name:"Azhar"}})
+
+Delete->deleteOne/deleteMany
+
+db.collection.deleteOne({_key:value})
+
+RelationShip->A document can have other child document as values to its keys or array of child documents in case of One->Many relationship.
+
+One other format for One->Many relationship is to store only the IDs of other document inside array so that these ids can be used to locate their documents.Instead of storing whole objects just their id is stored in array of ids.
+
+Time: 20 Hr : 55 Min : 06 Sec
+Title:-> Exiting a MONGO DB server
+
+quit in bash after your use.
+
+
+Date: 26/08/2022
+Time: 14 Hr : 20 Min : 06 Sec
+Title:-> Mongoose (Object Document Mapper)
+//refer mongo db folder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
